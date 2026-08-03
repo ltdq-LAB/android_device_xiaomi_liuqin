@@ -1,0 +1,14 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Sensors HAL enumerates all properties at startup; the extra reads are not
+# used for sensor behavior.
+dontaudit hal_sensors_default property_type:file { open read getattr map };
+
+allow hal_sensors_default vendor_sysfs_sensors:file rw_file_perms;
+
+# LCD wake gesture chains read the keyboard-cover Hall switch (SW_LID) from
+# the gpio-keys input device so the closed cover gates pen/double-tap wake.
+allow hal_sensors_default input_device:dir { getattr open read search };
+allow hal_sensors_default input_device:chr_file { getattr ioctl open read };

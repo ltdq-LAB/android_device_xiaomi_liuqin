@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string-array name="stylus_button_action_entries">
+        <item>@string/stylus_action_none</item>
+        <item>@string/stylus_action_open_notes</item>
+        <item>@string/stylus_action_screenshot</item>
+        <item>@string/stylus_action_back</item>
+        <item>@string/stylus_action_home</item>
+        <item>@string/stylus_action_recents</item>
+        <item>@string/stylus_action_media_play_pause</item>
+    </string-array>
+
+    <!-- Keep these tokens in sync with StylusSettingsContract.Action. -->
+    <string-array name="stylus_button_action_values" translatable="false">
+        <item>none</item>
+        <item>open_notes</item>
+        <item>screenshot</item>
+        <item>back</item>
+        <item>home</item>
+        <item>recents</item>
+        <item>media_play_pause</item>
+    </string-array>
+</resources>

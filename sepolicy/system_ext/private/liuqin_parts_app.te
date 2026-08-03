@@ -1,0 +1,29 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+typeattribute liuqin_parts_app coredomain;
+typeattribute liuqin_parts_app mlstrustedsubject;
+
+app_domain(liuqin_parts_app)
+
+# LiuqinParts uses the system UID and therefore receives a
+# system_app_data_file sandbox rather than the regular app_data_file label.
+allow liuqin_parts_app system_app_data_file:dir create_dir_perms;
+allow liuqin_parts_app system_app_data_file:file create_file_perms;
+
+# LiuqinParts hosts an Activity and therefore needs the same public framework
+# service discovery surface granted to other platform and privileged app
+# domains. Binder permissions remain governed separately.
+allow liuqin_parts_app app_api_service:service_manager find;
+
+# UEventObserver only receives kernel multicast messages.  Do not use
+# create_socket_perms here: its write/append permissions violate the appdomain
+# uevent neverallow and are unnecessary for uevent_open_socket().
+allow liuqin_parts_app self:netlink_kobject_uevent_socket {
+    bind
+    create
+    getopt
+    read
+    setopt
+};

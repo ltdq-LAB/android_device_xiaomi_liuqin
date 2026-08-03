@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Height of the status bar. Values are taken from the stock liuqin
+         device overlay (60 px at the device's density). -->
+    <dimen name="status_bar_height_default">60px</dimen>
+    <dimen name="status_bar_height_portrait">60px</dimen>
+    <dimen name="status_bar_height_landscape">60px</dimen>
+
+    <!-- Height of area above QQS where battery/time go. -->
+    <dimen name="quick_qs_offset_height">60px</dimen>
+
+    <!-- Radius of the software rounded corners. 46 px from the stock liuqin
+         device overlay was slightly too large, so 40 px (matching the pipa
+         tablet) is used. The display has no cutout. -->
+    <dimen name="rounded_corner_radius">40px</dimen>
+    <dimen name="rounded_corner_radius_top">40px</dimen>
+    <dimen name="rounded_corner_radius_bottom">40px</dimen>
+    <dimen name="rounded_corner_content_padding">0dp</dimen>
+</resources>

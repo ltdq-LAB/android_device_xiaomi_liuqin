@@ -1,0 +1,9 @@
+# Keyboard cover
+genfscon sysfs /devices/virtual/nanodev/nanodev0 u:object_r:vendor_sysfs_nanosic:s0
+genfscon sysfs /devices/virtual/nanodev/nanodev0/_inputenable u:object_r:vendor_sysfs_nanosic_control:s0
+genfscon sysfs /devices/virtual/nanodev/nanodev0/_version176x u:object_r:vendor_sysfs_nanosic_status:s0
+genfscon sysfs /devices/virtual/nanodev/nanodev0/_version803x u:object_r:vendor_sysfs_nanosic_status:s0
+
+# LCD gesture event subscriptions are separate from persistent hardware modes.
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_double_tap_subscribed u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_subscribed u:object_r:vendor_sysfs_sensors:s0

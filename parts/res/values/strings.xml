@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Stylus</string>
+    <string name="stylus_settings_title">Stylus</string>
+    <string name="stylus_settings_summary">Configure stylus gestures and button actions</string>
+    <string name="stylus_screen_off_gestures_category">Screen-off gestures</string>
+    <string name="stylus_quick_note_screen_off_title">Tap with stylus to wake</string>
+    <string name="stylus_quick_note_screen_off_summary">Wake the tablet with a single stylus tap while the screen is off</string>
+    <string name="stylus_quick_note_write_failed">Could not save the stylus wake setting</string>
+    <string name="stylus_button_actions_category">Button actions</string>
+    <string name="stylus_button_actions_description">Choose what happens when you press and hold each stylus button. Notes open when the pen touches the screen.</string>
+    <string name="stylus_primary_button_title">Primary button</string>
+    <string name="stylus_secondary_button_title">Secondary button</string>
+    <string name="stylus_action_none">Do nothing</string>
+    <string name="stylus_action_open_notes">Open notes</string>
+    <string name="stylus_action_screenshot">Take a screenshot</string>
+    <string name="stylus_action_back">Go back</string>
+    <string name="stylus_action_home">Go home</string>
+    <string name="stylus_action_recents">Open recent apps</string>
+    <string name="stylus_action_media_play_pause">Play or pause media</string>
+    <string name="stylus_setting_write_failed">Could not save the stylus button action</string>
+    <string name="stylus_battery_level">Stylus connected, battery: %1$d%%</string>
+    <string name="stylus_connecting">Connecting stylus...</string>
+    <string name="stylus_pairing">Pairing stylus...</string>
+    <string name="stylus_connected">Stylus connected</string>
+    <string name="stylus_connection_failed">Could not connect to stylus</string>
+    <string name="stylus_bluetooth_off">Turn on Bluetooth to connect the stylus</string>
+</resources>

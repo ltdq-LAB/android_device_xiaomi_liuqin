@@ -1,0 +1,9 @@
+# Settings discovers this provider by its manifest-declared class name.
+-keep class org.lineageos.liuqinparts.ConfigPanelSearchIndexablesProvider { *; }
+
+# Keep framework-instantiated entry points and the class loaded directly into
+# system_server by LineageSdk's DeviceKeyHandler hook.
+-keep class org.lineageos.liuqinparts.BootReceiver { *; }
+-keep class org.lineageos.liuqinparts.KeyHandler { *; }
+-keep class org.lineageos.liuqinparts.StylusSettingsActivity { *; }
+-keep class org.lineageos.liuqinparts.stylus.** { *; }

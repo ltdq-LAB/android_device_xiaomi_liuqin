@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Settings enumerates vendor.default.* properties; the extra reads are not
+# required by platform behavior.
+dontaudit system_app vendor_default_prop:file { open read getattr map };

@@ -1,0 +1,3 @@
+# LiuqinParts is platform-signed, privileged and shares the system UID, but it
+# must not inherit the broad system_app domain.
+user=system seinfo=platform isPrivApp=true name=org.lineageos.liuqinparts domain=liuqin_parts_app type=system_app_data_file levelFrom=all

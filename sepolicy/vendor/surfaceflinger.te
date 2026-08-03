@@ -1,0 +1,6 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# SurfaceFlinger talks to the QTI QSPM HAL.
+binder_call(surfaceflinger, vendor_hal_qspmhal_default)

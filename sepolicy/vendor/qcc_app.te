@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# QTI QCC app enumerates vendor.default.* properties; the extra reads are not
+# required for its behavior.
+dontaudit vendor_qcc_app vendor_default_prop:file { open read getattr map };

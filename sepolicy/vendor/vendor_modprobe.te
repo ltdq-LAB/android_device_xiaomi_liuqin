@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Loading vendor kernel modules triggers a benign sys_admin capability
+# request that is not needed for module loading itself.
+dontaudit vendor_modprobe self:capability sys_admin;

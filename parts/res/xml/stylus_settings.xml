@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/stylus_settings_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="stylus_button_actions_description"
+        android:title="@string/stylus_button_actions_description" />
+
+    <PreferenceCategory
+        android:key="stylus_screen_off_gestures"
+        android:title="@string/stylus_screen_off_gestures_category">
+
+        <androidx.preference.SwitchPreferenceCompat
+            android:key="stylus_quick_note_screen_off"
+            android:defaultValue="false"
+            android:persistent="false"
+            android:summary="@string/stylus_quick_note_screen_off_summary"
+            android:title="@string/stylus_quick_note_screen_off_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="stylus_button_actions"
+        android:title="@string/stylus_button_actions_category">
+
+        <ListPreference
+            android:key="liuqin_stylus_primary_button_action"
+            android:defaultValue="open_notes"
+            android:dialogTitle="@string/stylus_primary_button_title"
+            android:entries="@array/stylus_button_action_entries"
+            android:entryValues="@array/stylus_button_action_values"
+            android:persistent="false"
+            android:title="@string/stylus_primary_button_title" />
+
+        <ListPreference
+            android:key="liuqin_stylus_secondary_button_action"
+            android:defaultValue="screenshot"
+            android:dialogTitle="@string/stylus_secondary_button_title"
+            android:entries="@array/stylus_button_action_entries"
+            android:entryValues="@array/stylus_button_action_values"
+            android:persistent="false"
+            android:title="@string/stylus_secondary_button_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

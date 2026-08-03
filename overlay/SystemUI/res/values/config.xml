@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- The LCD panel has no proximity sensor used for doze. -->
+    <bool name="doze_proximity_sensor_supported">false</bool>
+    <bool name="doze_proximity_check_before_pulse">false</bool>
+
+    <!-- Disable status bar burn-in protection on the LCD panel. -->
+    <bool name="config_disableStatusBarBurnInProtection">true</bool>
+</resources>

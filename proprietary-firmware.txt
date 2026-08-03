@@ -1,0 +1,28 @@
+## Expected A/B firmware partitions for liuqin. The current filesystem dump
+## does not contain this complete raw-image set: extract every image from a
+## matching liuqin firmware package, never substitute images from diting.
+##
+## modem is retained as the Qualcomm firmware filesystem. On liuqin it also
+## carries non-cellular ADSP/CDSP and FPC trusted applications.
+
+abl.img;AB
+aop.img;AB
+aop_config.img;AB
+bluetooth.img;AB
+cpucp.img;AB
+devcfg.img;AB
+dsp.img;AB
+featenabler.img;AB
+hyp.img;AB
+imagefv.img;AB
+keymaster.img;AB
+modem.img;AB
+qupfw.img;AB
+shrm.img;AB
+tz.img;AB
+uefi.img;AB
+uefisecapp.img;AB
+vm-bootsys.img;AB
+xbl.img;AB
+xbl_config.img;AB
+xbl_ramdump.img;AB

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Status bar paddings for the tablet layout. -->
+    <dimen name="status_bar_padding_start">22dp</dimen>
+    <dimen name="status_bar_padding_end">9dp</dimen>
+    <dimen name="status_bar_header_height_keyguard">@*android:dimen/status_bar_height</dimen>
+
+    <!-- The side-mounted fingerprint sensor sits in the power button on the top
+         edge, near the right side of the display in portrait orientation. -->
+    <dimen name="physical_fingerprint_sensor_center_screen_location_x">1560px</dimen>
+    <dimen name="physical_fingerprint_sensor_center_screen_location_y">0px</dimen>
+    <dimen name="physical_power_button_center_screen_location_y">@dimen/physical_fingerprint_sensor_center_screen_location_y</dimen>
+</resources>

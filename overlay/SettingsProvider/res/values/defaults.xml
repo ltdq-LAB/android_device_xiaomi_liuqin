@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL -->
+    <string name="def_device_name_simple">Xiaomi Pad 6 Pro</string>
+
+    <!-- Enable auto rotation switching by default. -->
+    <bool name="def_accelerometer_rotation">true</bool>
+    <bool name="def_adaptive_sleep">true</bool>
+    <bool name="def_show_ime_with_hard_keyboard">false</bool>
+
+    <!-- PhoneWindowManager consumes the standard pen-detach WAKE_GESTURE sensor. -->
+    <bool name="def_wake_gesture_enabled">true</bool>
+
+    <!-- Default screen off timeout, from the stock liuqin settings overlay. -->
+    <integer name="def_screen_off_timeout">120000</integer>
+
+    <!-- Set default screen rotation to 90 degrees (ROTATION_90). -->
+    <integer name="def_user_rotation">1</integer>
+</resources>

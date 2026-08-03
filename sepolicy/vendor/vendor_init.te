@@ -1,0 +1,12 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# vendor_init creates /dev/ipa during early boot.
+allow vendor_init vendor_ipa_dev:file create_file_perms;
+allow vendor_init vendor_ipa_dev:chr_file w_file_perms;
+
+# Force the dynamically exposed input devices off if the HAL crashes. Ueventd
+# owns device/sysfs mode assignment, including after a driver reprobe.
+allow vendor_init vendor_sysfs_nanosic:dir { getattr search };
+allow vendor_init vendor_sysfs_nanosic_control:file { getattr open write };

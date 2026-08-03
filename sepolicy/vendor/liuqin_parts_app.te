@@ -1,0 +1,17 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Resolve the /sys/class/touch symlink.  Hall, MAC and battery arrive only in
+# the qcom-battery uevent payload; the app never opens qcom-battery sysfs.
+allow liuqin_parts_app sysfs:dir { getattr search };
+allow liuqin_parts_app sysfs:lnk_file read;
+
+# sm8450-common already gives pen_connect_strategy its exact
+# /devices/virtual/touch/touch_dev genfs label.  It is the stock touch module's
+# active-pen state and is never written by LiuqinParts.
+allow liuqin_parts_app vendor_sysfs_touch:file { getattr open read };
+
+# Client of the exact liuqin vendor.xiaomi.hw.touchfeature@1.0 HIDL service.
+hwbinder_use(liuqin_parts_app)
+hal_client_domain(liuqin_parts_app, hal_touchfeature_xiaomi)

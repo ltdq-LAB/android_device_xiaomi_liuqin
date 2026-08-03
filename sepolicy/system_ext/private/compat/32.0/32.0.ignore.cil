@@ -1,0 +1,8 @@
+;; liuqin_parts_app is a device-specific domain introduced in current policy
+;; and has no analogue in 32.0 system_ext policy.
+(type new_objects)
+(typeattribute new_objects)
+(typeattributeset new_objects
+  ( new_objects
+    liuqin_parts_app
+  ))

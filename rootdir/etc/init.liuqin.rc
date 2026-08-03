@@ -1,0 +1,44 @@
+#
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# The Xiaomi ABL appends androidboot.ori=<n> to bootconfig; LineageOS init
+# turns it into ro.boot.ori (set before rc files are parsed, so direct
+# "on property:ro.boot.ori=" triggers cannot fire). Copy it to a mutable
+# property during early-init, then translate it to the AOSP boot animation
+# orientation property consumed by BootAnimation and WindowManagerService.
+#
+#   01 -> ROTATION_90  -> ORIENTATION_90
+#   02 -> ROTATION_0   -> ORIENTATION_0
+#   03 -> ROTATION_270 -> ORIENTATION_270
+#   04 -> ROTATION_180 -> ORIENTATION_180
+
+on early-init
+    setprop sys.bootanim.ori ${ro.boot.ori:-}
+
+on property:sys.bootanim.ori=01
+    setprop ro.bootanim.set_orientation_logical_0 ORIENTATION_90
+
+on property:sys.bootanim.ori=02
+    setprop ro.bootanim.set_orientation_logical_0 ORIENTATION_0
+
+on property:sys.bootanim.ori=03
+    setprop ro.bootanim.set_orientation_logical_0 ORIENTATION_270
+
+on property:sys.bootanim.ori=04
+    setprop ro.bootanim.set_orientation_logical_0 ORIENTATION_180
+
+on boot
+    # LCD gesture event subscriptions; hardware modes are setting-owned.
+    chown system system /sys/class/touch/touch_dev/gesture_double_tap_subscribed
+    chown system system /sys/class/touch/touch_dev/gesture_single_tap_subscribed
+    chmod 0660 /sys/class/touch/touch_dev/gesture_double_tap_subscribed
+    chmod 0660 /sys/class/touch/touch_dev/gesture_single_tap_subscribed
+
+    # Pen detach wake gesture
+    chown system system /sys/class/touch/touch_dev/gesture_pen_detach_enabled
+    chown system system /sys/class/touch/touch_dev/gesture_pen_detach_state
+    chmod 0660 /sys/class/touch/touch_dev/gesture_pen_detach_enabled
+    chmod 0660 /sys/class/touch/touch_dev/gesture_pen_detach_state

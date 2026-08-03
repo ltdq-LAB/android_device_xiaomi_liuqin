@@ -1,0 +1,34 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+type hal_keyboardnanoapp_default, domain;
+type hal_keyboardnanoapp_default_exec, exec_type, file_type, vendor_file_type;
+
+hal_attribute(keyboardnanoapp)
+init_daemon_domain(hal_keyboardnanoapp_default)
+hal_server_domain(hal_keyboardnanoapp_default, hal_keyboardnanoapp)
+
+binder_use(hal_keyboardnanoapp_default)
+binder_call(hal_keyboardnanoapp_client, hal_keyboardnanoapp_server)
+# The HAL calls the registered one-way callback in the client process.
+binder_call(hal_keyboardnanoapp_server, hal_keyboardnanoapp_client)
+hal_attribute_service(hal_keyboardnanoapp, hal_keyboardnanoapp_service)
+
+# Keep compatibility with Xiaomi's framework service. The command-line client
+# is restricted to debug builds.
+hal_client_domain(system_server, hal_keyboardnanoapp)
+
+userdebug_or_eng(`
+hal_client_domain(shell, hal_keyboardnanoapp)
+')
+
+allow hal_keyboardnanoapp_default vendor_nanosic_device:chr_file { getattr open read write };
+allow hal_keyboardnanoapp_default vendor_sysfs_nanosic:dir { getattr search };
+allow hal_keyboardnanoapp_default vendor_sysfs_nanosic_control:file { getattr open read write };
+allow hal_keyboardnanoapp_default vendor_sysfs_nanosic_status:file { getattr open read };
+
+# HallInputMonitor enumerates /dev/input, identifies gpio-keys with EVIOCGNAME
+# and reads SW_LID/SW_TABLET_MODE through evdev ioctls.
+allow hal_keyboardnanoapp_default input_device:dir { getattr open read search };
+allow hal_keyboardnanoapp_default input_device:chr_file { getattr ioctl open read };

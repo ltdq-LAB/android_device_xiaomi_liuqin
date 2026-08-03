@@ -1,0 +1,15 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Camera HAL enumerates all properties at startup; only public vendor
+# properties are needed for actual camera behavior.
+get_prop(hal_camera_default, vendor_public_property_type)
+dontaudit hal_camera_default property_type:file { open read getattr map };
+
+# The camera provider also serves the Xiaomi QuickCamera interface.
+hal_server_domain(hal_camera_default, hal_quickcamera)
+
+# The camera HAL probes /data/local/tmp during startup; this is unused on
+# user builds.
+dontaudit hal_camera_default shell_data_file:dir search;

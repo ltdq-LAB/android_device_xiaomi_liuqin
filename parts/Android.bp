@@ -1,0 +1,35 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "LiuqinParts",
+
+    defaults: ["SettingsLibDefaults"],
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+    system_ext_specific: true,
+    privapp_allowlist: "privapp-permissions-org.lineageos.liuqinparts.xml",
+
+    libs: [
+        "framework-bluetooth.stubs.module_lib",
+    ],
+
+    static_libs: [
+        "androidx.preference_preference",
+        "SettingsLibCollapsingToolbarBaseActivity",
+        "//hardware/xiaomi:vendor.xiaomi.hw.touchfeature-V1.0-java",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}

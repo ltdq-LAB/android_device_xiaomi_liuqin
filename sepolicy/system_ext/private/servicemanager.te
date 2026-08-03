@@ -1,0 +1,6 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# usbd calls servicemanager while registering USB services.
+binder_call(servicemanager, usbd)

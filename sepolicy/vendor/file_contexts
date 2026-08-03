@@ -1,0 +1,6 @@
+# Keyboard cover
+/dev/nanodev0 u:object_r:vendor_nanosic_device:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.keyboard-service\.xiaomi u:object_r:hal_keyboardnanoapp_default_exec:s0
+
+# Xiaomi touchfeature compatibility service
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service u:object_r:hal_touchfeature_xiaomi_server_exec:s0

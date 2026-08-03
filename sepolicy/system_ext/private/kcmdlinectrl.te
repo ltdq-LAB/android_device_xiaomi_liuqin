@@ -1,0 +1,6 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# kcmdlinectrl reads fstab info from the device tree.
+r_dir_file(kcmdlinectrl, sysfs_dt_firmware_android)

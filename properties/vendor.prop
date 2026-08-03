@@ -1,0 +1,24 @@
+# Display
+ro.vendor.display.default_fps=144
+ro.vendor.display.smartpen.idle.enable=true
+ro.vendor.display.smartpen_vrr_fps=true
+ro.vendor.display.type=lcd
+
+# Fingerprint
+persist.vendor.fingerprint.type=side
+
+# System properties
+ro.product.property_source_order=odm,vendor,product,system_ext,system
+
+# Touch
+ro.vendor.touchfeature.type=43
+
+# Pen detach wake gesture. Cover/keyboard Hall wake remains the kernel SW_LID path.
+ro.vendor.sensors.xiaomi.pen_detach=true
+
+# Gate the doze pickup pulse on the keyboard-cover Hall switch: with the cover
+# closed, picking the tablet up must not light the display.
+ro.vendor.sensors.xiaomi.pickup_lid_gate=true
+
+# Wi-Fi
+ro.hardware.wlan.chip=qca6490

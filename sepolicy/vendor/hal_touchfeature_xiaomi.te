@@ -1,0 +1,39 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Use a dedicated server domain while retaining the conventional client
+# attribute name consumed by hal_client_domain(..., hal_touchfeature_xiaomi).
+# A separate *_server attribute is intentionally unnecessary here.
+attribute hal_touchfeature_xiaomi;
+expandattribute hal_touchfeature_xiaomi true;
+attribute hal_touchfeature_xiaomi_client;
+expandattribute hal_touchfeature_xiaomi_client true;
+
+type hal_touchfeature_xiaomi_server, domain;
+type hal_touchfeature_xiaomi_server_exec, exec_type, file_type, vendor_file_type;
+type hal_touchfeature_xiaomi_hwservice, hwservice_manager_type;
+
+typeattribute hal_touchfeature_xiaomi_server halserverdomain;
+typeattribute hal_touchfeature_xiaomi_server hal_touchfeature_xiaomi;
+
+init_daemon_domain(hal_touchfeature_xiaomi_server)
+hwbinder_use(hal_touchfeature_xiaomi_server)
+
+binder_call(hal_touchfeature_xiaomi_client, hal_touchfeature_xiaomi_server)
+allow hal_touchfeature_xiaomi_client hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+add_hwservice(hal_touchfeature_xiaomi_server, hal_touchfeature_xiaomi_hwservice)
+
+# Only the adapter service speaks the compact /dev/xiaomi-touch ioctl ABI.
+allow hal_touchfeature_xiaomi_server touchfeature_device:chr_file {
+    getattr
+    ioctl
+    open
+    read
+    write
+};
+
+# getTouchEvent uses the exact stock abstract SOCK_SEQPACKET client protocol.
+# A connectto rule must remain tied to the eventual producer's dedicated
+# domain; do not grant it to an unrelated broad vendor domain.
+allow hal_touchfeature_xiaomi_server self:unix_stream_socket create_stream_socket_perms;

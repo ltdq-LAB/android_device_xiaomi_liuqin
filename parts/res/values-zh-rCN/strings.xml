@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">手写笔</string>
+    <string name="stylus_settings_title">手写笔</string>
+    <string name="stylus_settings_summary">设置手写笔手势和按键</string>
+    <string name="stylus_screen_off_gestures_category">息屏手势</string>
+    <string name="stylus_quick_note_screen_off_title">手写笔单击唤醒</string>
+    <string name="stylus_quick_note_screen_off_summary">息屏时使用手写笔单击屏幕以唤醒平板</string>
+    <string name="stylus_quick_note_write_failed">无法保存手写笔唤醒设置</string>
+    <string name="stylus_button_actions_category">按键操作</string>
+    <string name="stylus_button_actions_description">选择按住各手写笔按键时执行的操作。“打开笔记”会在笔尖触屏时启动。</string>
+    <string name="stylus_primary_button_title">主按键</string>
+    <string name="stylus_secondary_button_title">副按键</string>
+    <string name="stylus_action_none">无操作</string>
+    <string name="stylus_action_open_notes">打开笔记</string>
+    <string name="stylus_action_screenshot">截取屏幕</string>
+    <string name="stylus_action_back">返回</string>
+    <string name="stylus_action_home">返回主屏幕</string>
+    <string name="stylus_action_recents">打开最近任务</string>
+    <string name="stylus_action_media_play_pause">播放或暂停媒体</string>
+    <string name="stylus_setting_write_failed">无法保存手写笔按键操作</string>
+    <string name="stylus_battery_level">手写笔已连接，当前电量：%1$d%%</string>
+    <string name="stylus_connecting">正在连接手写笔……</string>
+    <string name="stylus_pairing">正在配对手写笔……</string>
+    <string name="stylus_connected">手写笔已连接</string>
+    <string name="stylus_connection_failed">手写笔连接失败</string>
+    <string name="stylus_bluetooth_off">请开启蓝牙以连接手写笔</string>
+</resources>

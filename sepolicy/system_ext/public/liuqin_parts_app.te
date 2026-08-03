@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Public so the device vendor policy can grant this one system_ext component
+# access to device-specific HAL and sysfs types without widening system_app.
+type liuqin_parts_app, domain;

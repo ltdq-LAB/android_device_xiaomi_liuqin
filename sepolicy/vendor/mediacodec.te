@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# mediacodec enumerates all properties while creating codec instances; the
+# extra reads are not needed for codec behavior.
+dontaudit mediacodec property_type:file { open read getattr map };

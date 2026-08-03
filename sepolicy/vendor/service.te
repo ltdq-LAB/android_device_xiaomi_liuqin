@@ -1,0 +1,5 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+type hal_keyboardnanoapp_service, hal_service_type, protected_service, service_manager_type;

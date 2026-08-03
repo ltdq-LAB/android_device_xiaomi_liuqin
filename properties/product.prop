@@ -1,0 +1,5 @@
+# Input
+persist.stylus.palm.reject=1
+
+# Tablet
+ro.support_one_handed_mode=false

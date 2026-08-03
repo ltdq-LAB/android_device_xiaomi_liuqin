@@ -1,0 +1,7 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+type vendor_sysfs_nanosic, fs_type, sysfs_type;
+type vendor_sysfs_nanosic_control, fs_type, sysfs_type;
+type vendor_sysfs_nanosic_status, fs_type, sysfs_type;
